@@ -5,3 +5,14 @@ services:
 script:
   - docker build -t khadija91/docker-vuejs -f Dockerfile.dev .
 
+delpoy:
+  provider: elasticbeanstalk
+  region: "eu-north-1"
+  app: "docker-vue-app"
+  env: "docker-vue-app-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-327441465709"
+  backet_path: "docker-vue-app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
