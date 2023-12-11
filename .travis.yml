@@ -2,6 +2,6 @@ sudo: required
 services:
   - docker
 
-before_install:
+script:
   - docker build -t khadija91/docker-vuejs -f Dockerfile.dev .
 
